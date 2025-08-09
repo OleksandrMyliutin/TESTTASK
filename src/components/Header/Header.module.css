@@ -1,0 +1,12 @@
+.headerContainer{
+    display: flex;
+    align-items: center;
+    column-gap: 14px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+}
+
+.buttonsContainer{
+    display: flex;
+    column-gap: 10px;
+}

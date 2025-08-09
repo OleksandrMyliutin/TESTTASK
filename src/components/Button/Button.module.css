@@ -1,0 +1,6 @@
+.btnStyle{
+    border-radius: 80px;
+    width: 100px;
+    height: 34px;
+    background-color: var(--color-primary);
+}

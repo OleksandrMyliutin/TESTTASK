@@ -1,0 +1,40 @@
+.containerImage{
+    height: auto;
+    object-fit: cover;
+    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 40px;
+}
+.title{
+    font-family: var(--font-family);
+    line-height: 100%;
+    text-align: center;
+    color: #fff;
+    padding-bottom: 21px;
+}
+
+.paragraph{
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 162%;
+    text-align: center;
+    color: #fff;
+
+    padding-bottom: 32px;
+}
+
+@media only screen and (min-width: 768px) {
+    .containerImage{
+        padding-top: 89px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .containerImage{
+        padding-top: 164px;
+    }
+}
