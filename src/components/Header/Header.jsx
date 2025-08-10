@@ -6,17 +6,19 @@ import s from './Header.module.css'
 const Header = () => {
     return (
         <>
-            <Container>
-                <div className={s.headerContainer}>
-                    <div><img src={svg} alt="logo" /></div>
-                    <div className={s.buttonsContainer}>
-                        <Button>
-                            <a href="#OurCheerfulUsers">User</a>
-                        </Button>
-                        <Button><a href="#RegisterToGetWork">Sign up</a></Button>
+            <div className={s.headerStyle}>
+                <Container>
+                    <div className={s.headerContainer}>
+                        <div><img src={svg} alt="logo" /></div>
+                        <div className={s.buttonsContainer}>
+                            <Button>
+                                <a href="#OurCheerfulUsers">User</a>
+                            </Button>
+                            <Button><a href="#RegisterToGetWork">Sign up</a></Button>
+                        </div>
                     </div>
-                </div>
-            </Container>
+                </Container>
+            </div>
         </>
     )
 }

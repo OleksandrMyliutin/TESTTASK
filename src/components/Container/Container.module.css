@@ -30,6 +30,13 @@
     }
     .addBackImg{
         background-image: url(../../assets/images/hero/hero-image-desktop.png);
-        height: 650px;;
+        height: 650px;
+    }
+}
+
+@media screen and (min-width: 2560px) {
+    .container{
+        max-width: 1170px;
+        padding: 0;
     }
 }

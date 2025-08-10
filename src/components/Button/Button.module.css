@@ -3,4 +3,15 @@
     width: 100px;
     height: 34px;
     background-color: var(--color-primary);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btnStyle:hover{
+    background-color: #ffe302;
+}
+
+.disabledStyle{
+    background-color: #b4b4b4;
+    cursor: not-allowed;
+    color: rgba(255, 255, 255, 0.87);
 }

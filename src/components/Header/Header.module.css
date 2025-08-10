@@ -1,3 +1,6 @@
+.headerStyle{
+    background: #fff;
+}
 .headerContainer{
     display: flex;
     align-items: center;
@@ -9,4 +12,22 @@
 .buttonsContainer{
     display: flex;
     column-gap: 10px;
+}
+
+
+@media only screen and (min-width: 768px) {
+    .headerContainer{
+        column-gap: 390px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .headerContainer{
+        column-gap: 590px;
+    }
+}
+@media screen and (min-width: 2560px) {
+    .headerContainer{
+        column-gap: 856px;
+    }
 }

@@ -17,8 +17,6 @@
 }
 
 .paragraph{
-    font-family: var(--font-family);
-    font-weight: 400;
     font-size: 16px;
     line-height: 162%;
     text-align: center;
@@ -31,10 +29,17 @@
     .containerImage{
         padding-top: 89px;
     }
+    .containerText{
+        max-width: 380px;
+    }
 }
 
 @media only screen and (min-width: 1024px) {
     .containerImage{
         padding-top: 164px;
     }
+}
+
+@media screen and (min-width: 2560px) {
+    
 }
