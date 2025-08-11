@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { lazy } from 'react'
 import Header from '../components/Header/Header'
-import Hero from '../components/Hero/Hero'
-import OurCheerfulUsers from '../components/OurCheerfulUsers/OurCheerfulUsers'
-import RegisterToGetWork from '../components/RegisterToGetWork/RegisterToGetWork'
+const Hero = lazy(() => import ('../components/Hero/Hero'));
+const OurCheerfulUsers = lazy(() => import ('../components/OurCheerfulUsers/OurCheerfulUsers'));
+const RegisterToGetWork = lazy(() => import ('../components/RegisterToGetWork/RegisterToGetWork'));
+
 
 const OnePage = () => {
     return (
