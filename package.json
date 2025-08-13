@@ -15,7 +15,10 @@
     "normalize.css": "^8.0.1",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "react-redux": "^9.2.0"
+    "react-hot-toast": "^2.5.2",
+    "react-redux": "^9.2.0",
+    "react-spinners": "^0.17.0",
+    "toaster": "^0.1.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.32.0",

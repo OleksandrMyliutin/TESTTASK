@@ -1,9 +1,13 @@
 import React from 'react'
 
-const UserCard = () => {
+const UserCard = ({ name, email, phone, position, photo}) => {
   return (
-    <div>
-      
+    <div >
+      <p>{name}</p>
+      <p>{email}</p>
+      <p>{phone}</p>
+      <p>{position}</p>
+      <img src={photo} alt="photoUser" />
     </div>
   )
 }
