@@ -4,7 +4,7 @@ import { selectLoader, selectUser, selectUserError } from '../../redux/users/sel
 import Loader from '../Loader/Loader';
 import { useEffect } from 'react';
 import toast from 'react-hot-toast';
-
+import s from './UserCardsList.module.css'
 
 
 
@@ -23,22 +23,22 @@ const UserCardsList = () => {
   
 
   return (
-    <div>
-      <ul>
+    <>
+      <ul className={s.listStyle}>
         {isLoading && <Loader />}
         {!isLoading && Array.isArray(userArr) && userArr.map(({id, name, email, phone, position, photo}) => (
-          <li key={id}>
+          <li key={id} className={s.listItem}>
             <UserCard
+              photo={photo}
               name={name}
+              position={position}
               email={email}
               phone={phone}
-              position={position}
-              photo={photo}
             />
           </li>
         ))}
       </ul>
-    </div>
+    </>
   );
 }
 

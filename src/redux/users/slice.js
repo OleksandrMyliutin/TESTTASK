@@ -4,6 +4,7 @@ import { fetchUserCards } from "../operations";
 const initialState = {
     users: [],
     totalPages: 0,
+    count: 6,
     page: 1,
     isLoading: false,
     error: null,

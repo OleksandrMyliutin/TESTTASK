@@ -9,6 +9,10 @@
 
     padding-top: 40px;
 }
+
+.paragraphBtn{
+    padding-top: 4px;
+}
 .title{
     font-family: var(--font-family);
     line-height: 100%;

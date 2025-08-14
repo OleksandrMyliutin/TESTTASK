@@ -1,0 +1,19 @@
+.styleSection{
+    scroll-margin-top: 60px;
+    margin-top: 140px;
+}
+
+.titleSection{
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 100%;
+    text-align: center;
+    color: var(--black-87);
+}
+
+.specialContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 50px;
+}

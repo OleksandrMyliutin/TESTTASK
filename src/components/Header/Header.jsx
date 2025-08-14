@@ -11,10 +11,8 @@ const Header = () => {
                     <div className={s.headerContainer}>
                         <div><img src={svg} alt="logo" /></div>
                         <div className={s.buttonsContainer}>
-                            <Button>
-                                <a href="#OurCheerfulUsers">User</a>
-                            </Button>
-                            <Button><a href="#RegisterToGetWork">Sign up</a></Button>
+                            <Button link id={"#OurCheerfulUsers"}><p className={s.paragraph}>User</p></Button>
+                            <Button link id={"#RegisterToGetWork"}><p className={s.paragraph}>Sign up</p></Button>
                         </div>
                     </div>
                 </Container>
