@@ -11,7 +11,8 @@
     background-color: #ffe302;
 }
 
-.disabledStyle{
+.disabledStyle,
+.disabledStyle:hover{
     background-color: #b4b4b4;
     cursor: not-allowed;
     color: rgba(255, 255, 255, 0.87);
@@ -19,4 +20,5 @@
 
 .loadMore{
     width: 120px;
+    height: 34px;
 }

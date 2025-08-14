@@ -1,5 +1,5 @@
 import React from 'react'
-import s from "./UserCardsList.module.css"
+import s from "./UserCard.module.css"
 const UserCard = ({ name, email, phone, position, photo}) => {
   return (
     <>

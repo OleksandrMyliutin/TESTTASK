@@ -17,14 +17,6 @@
     background: #fff;
 }
 
-.paragraphStyle{
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-.imageStyle{
-    border-radius: 100%;
-}
 
 @media only screen and (min-width: 768px) {
     .listStyle{

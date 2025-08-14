@@ -1,4 +1,4 @@
-import UserCard from './UserCard'
+import UserCard from './UserCard/UserCard'
 import {  useSelector } from 'react-redux';
 import { selectLoader, selectUser, selectUserError } from '../../redux/users/selectors';
 import Loader from '../Loader/Loader';
