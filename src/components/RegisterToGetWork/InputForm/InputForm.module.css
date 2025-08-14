@@ -3,6 +3,7 @@
     flex-direction: column;
     align-items: center;
     row-gap: 50px;
+    margin-bottom: 100px;
 }
 
 .field{
@@ -161,9 +162,46 @@
     line-height: 1.2; 
 }
 
+.uploadBox{
+    display:flex; 
+    align-items:center;
+    width:100%; 
+    max-width:380px; 
+    height:54px;
+    border:1px solid #d0cfcf; 
+    border-radius:4px; 
+    background:#fafafa;
+    cursor:pointer;
+    margin-top: 47px;
+}
+.uploadBtn{
+    padding:0 18px; 
+    height:100%;
+    display:flex; 
+    align-items:center;
+    background:#fff; 
+    border-right:1px solid #d0cfcf;
+    border-top-left-radius:4px; 
+    border-bottom-left-radius:4px;
+    font-weight:600;
+    }
+.uploadPlaceholder{
+    padding-left:16px;
+    width: 328px;
+    color:#8d8d8d;
+    white-space:nowrap; 
+    overflow:hidden; 
+    text-overflow:ellipsis; 
+    flex:1;
+}
+
 @media only screen and (min-width: 768px) {
 
     .labelWrapper{
+        width: 380px;
+    }
+
+    .uploadPlaceholder{
         width: 380px;
     }
 }

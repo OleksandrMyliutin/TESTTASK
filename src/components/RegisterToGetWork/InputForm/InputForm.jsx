@@ -66,6 +66,26 @@ const InputForm = () => {
                         <span className={s.bullet} aria-hidden="true"></span>
                         <span className={s.text}>QA</span>
                     </label>
+
+                    <Field name="photo">
+                    {({ form }) => (
+                        <label className={s.uploadBox}>
+                        <input
+                            name="photo"
+                            type="file"
+                            accept="image/*"
+                            hidden
+                            onChange={(e) =>
+                            form.setFieldValue('photo', e.currentTarget.files?.[0] ?? null)
+                            }
+                        />
+                        <span className={s.uploadBtn}>Upload</span>
+                        <span className={s.uploadPlaceholder}>
+                            {form.values.photo ? form.values.photo.name : 'Upload your photo'}
+                        </span>
+                        </label>
+                    )}
+                    </Field>
                 </div>
                 <Button disabled>Sign up</Button>
             </Form>
