@@ -1,20 +1,21 @@
-import React from 'react'
+import React from 'react';
 import { ClipLoader } from 'react-spinners';
-const Loader = () => {
+import { selectLoader } from '../../redux/selectors';
+import { useSelector } from 'react-redux';
 
+const Loader = ( ) => {
+    const isLoading = useSelector(selectLoader);
     return (
-        <>
-            <ClipLoader
-                color="#00BDD3"
-                cssOverride={{borderWidth: "6px",
-                                borderColor: "transparent",
-                                borderTopColor: "#00BDD3",}}
-                loading
-                size={48}
-                speedMultiplier={1}
-            />
-        </>
-    )
-}
+        <ClipLoader
+        color="#00BDD3"
+        size={48} // розмір кола
+        speedMultiplier={1}
+        loading={isLoading}
+        cssOverride={{
+            borderWidth: "6px",
+        }}
+        />
+    );
+};
 
-export default Loader
+export default Loader;

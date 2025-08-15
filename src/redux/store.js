@@ -9,5 +9,12 @@ export const store = configureStore({
         auth: authReducer,
         position: positionReducer,
     },
+    middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+        serializableCheck: {
+            ignoredActions: ["auth/setInitialValue"],
+            ignoredPaths: ["auth.initialValue.photo"],
+        },
+    }),
     devTools: import.meta.env.MODE === 'development' ? true : false,
 }); 

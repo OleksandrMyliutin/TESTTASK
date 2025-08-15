@@ -3,6 +3,7 @@ import s from './Button.module.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchUserCards } from '../../redux/operations';
 import { selectCurrentPage } from '../../redux/selectors';
+import Loader from '../Loader/Loader';
 const Button = ({id, children, link=false, disabled=false, loadMoreInfo=false}) => {
     const dispatch = useDispatch();
     const currentPage = useSelector(selectCurrentPage);

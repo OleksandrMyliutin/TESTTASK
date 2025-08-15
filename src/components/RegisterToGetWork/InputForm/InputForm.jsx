@@ -3,15 +3,17 @@ import Button from '../../Button/Button'
 import s from './InputForm.module.css'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { setInitialValue } from '../../../redux/signup/formSlice'
-import { selectInitialValue, selectPositions } from '../../../redux/selectors'
+import { resetInitialValue, setInitialValue } from '../../../redux/signup/formSlice'
+import { selectInitialValue, selectLoader, selectPositions} from '../../../redux/selectors'
 import { useEffect } from 'react'
-import { fetchPositions } from '../../../redux/operations'
+import { fetchPositions, submitFromStore } from '../../../redux/operations'
+import Loader from '../../Loader/Loader'
+import toast from 'react-hot-toast'
 const InputForm = () => {
     const initialValues = useSelector(selectInitialValue);
     const dispatch = useDispatch();
     const positions = useSelector(selectPositions);
-
+    const isLoading = useSelector(selectLoader);
     useEffect(()=>{
         if (!positions.length) {
         dispatch(fetchPositions(positions));
@@ -20,6 +22,14 @@ const InputForm = () => {
 
     const handleSubmit = (values, actions) => {
 		dispatch(setInitialValue(values));
+        dispatch(submitFromStore())
+        .unwrap()
+        .then(() => {
+            actions.resetForm();
+            toast.success('User successfully registered', { id: 'signup-ok' });
+            dispatch(resetInitialValue());
+        })
+        .catch((e) => {toast.error(String(e), { id: 'signup-err' })})
 		actions.resetForm();
 	};
 
@@ -77,7 +87,8 @@ const InputForm = () => {
                         </label>
                     )}
                     </Field>
-                <Button disabled>Sign up</Button>
+                {isLoading && <Loader/>}
+                {!isLoading && <Button disabled>Sign up</Button>}
             </Form>
         </Formik>
     )
