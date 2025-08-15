@@ -11,7 +11,7 @@ const RegisterToGetWork = lazy(() => import ('../components/RegisterToGetWork/Re
 const OnePage = () => {
     const dispatch = useDispatch();
     useEffect(()=>{
-        dispatch(fetchUserCards());
+        dispatch(fetchUserCards({ page: 1, count: 6 }));
     }, [dispatch]);
     
     return (

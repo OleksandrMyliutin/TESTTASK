@@ -2,16 +2,28 @@ import { Formik, Form, Field } from 'formik'
 import Button from '../../Button/Button'
 import s from './InputForm.module.css'
 import { useDispatch, useSelector } from 'react-redux'
-import { selectInitialValue } from '../../../redux/users/selectors'
-import { setInitialValue } from '../../../redux/signup/slice'
+
+import { setInitialValue } from '../../../redux/signup/formSlice'
+import { selectInitialValue, selectPositions } from '../../../redux/selectors'
+import { useEffect } from 'react'
+import { fetchPositions } from '../../../redux/operations'
 const InputForm = () => {
     const initialValues = useSelector(selectInitialValue);
-
     const dispatch = useDispatch();
+    const positions = useSelector(selectPositions);
+
+    useEffect(()=>{
+        if (!positions.length) {
+        dispatch(fetchPositions(positions));
+    }
+    },[dispatch, positions]);
+
     const handleSubmit = (values, actions) => {
 		dispatch(setInitialValue(values));
 		actions.resetForm();
 	};
+
+
     return (
         <Formik initialValues={initialValues} onSubmit={handleSubmit}>
             <Form className={s.form}>
@@ -39,35 +51,14 @@ const InputForm = () => {
                     </label>
                 </div>
                 <div className={s.radioGroup}>
-                    <label className={s.item}>
-                        <Field type="radio" name="position" value="frontend"
-                        className={s.input} />
-                        <span className={s.bullet} aria-hidden="true"></span>
-                        <span className={s.text}>Frontend developer</span>
-                    </label>
-
-                    <label className={s.item}>
-                        <Field type="radio" name="position" value="backend"
-                        className={s.input} />
-                        <span className={s.bullet} aria-hidden="true"></span>
-                        <span className={s.text}>Backend developer</span>
-                    </label>
-
-                    <label className={s.item}>
-                        <Field type="radio" name="position" value="designer"
-                        className={s.input} />
-                        <span className={s.bullet} aria-hidden="true"></span>
-                        <span className={s.text}>Designer</span>
-                    </label>
-
-                    <label className={s.item}>
-                        <Field type="radio" name="position" value="qa"
-                        className={s.input} />
-                        <span className={s.bullet} aria-hidden="true"></span>
-                        <span className={s.text}>QA</span>
-                    </label>
-
-                    <Field name="photo">
+                    {positions.map(({ id, name }) => 
+                        (<label className={s.item} key={id}>
+                            <Field type="radio" name="position_id" value={String(id)} className={s.input} />
+                            <span className={s.bullet} aria-hidden="true"></span>
+                            <span className={s.text}>{name}</span>
+                        </label>))}
+                </div>
+                <Field name="photo">
                     {({ form }) => (
                         <label className={s.uploadBox}>
                         <input
@@ -86,7 +77,6 @@ const InputForm = () => {
                         </label>
                     )}
                     </Field>
-                </div>
                 <Button disabled>Sign up</Button>
             </Form>
         </Formik>

@@ -8,11 +8,5 @@
     font-size: 40px;
     line-height: 100%;
     text-align: center;
-}
-
-.specialContainer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    row-gap: 50px;
+    margin-bottom: 50px;
 }

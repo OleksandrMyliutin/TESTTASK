@@ -95,8 +95,13 @@
     display: flex; 
     flex-direction: column; 
     gap: 14px; 
-    align-self: start;
 }
+
+.form > .radioGroup{
+    width: 100%; 
+    max-width: 380px; 
+    margin-inline: auto;
+}   
 
 .item { 
     display: inline-flex; 
@@ -166,13 +171,12 @@
     display:flex; 
     align-items:center;
     width:100%; 
-    max-width:380px; 
+    max-width:328px; 
     height:54px;
     border:1px solid #d0cfcf; 
     border-radius:4px; 
     background:#fafafa;
     cursor:pointer;
-    margin-top: 47px;
 }
 .uploadBtn{
     padding:0 18px; 
@@ -197,11 +201,16 @@
 
 @media only screen and (min-width: 768px) {
 
+    .radioGroup{
+        margin-left: 0;
+    }
+
     .labelWrapper{
         width: 380px;
     }
 
-    .uploadPlaceholder{
-        width: 380px;
+    .uploadBox{
+        max-width: 380px;
     }
+
 }

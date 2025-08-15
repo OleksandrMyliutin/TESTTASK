@@ -5,9 +5,9 @@ const UserCard = ({ name, email, phone, position, photo}) => {
     <>
       <img src={photo} alt="photoUser" className={s.imageStyle}/>
       <p className={s.paragraphStyle}>{name}</p>
-      <p>{position}</p>
-      <p>{email}</p>
-      <p>{phone}</p>
+      <p className={s.ellipsis1}>{position}</p>
+      <p className={s.ellipsis1}>{email}</p>
+      <p className={s.ellipsis1}>{phone}</p>
     </>
   )
 }

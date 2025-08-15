@@ -6,7 +6,7 @@ const initialState = {
         username: "",
         email: "",
         phone:"",
-        position: '',
+        position_id: '',
         photo: null
     }
 }

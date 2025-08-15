@@ -22,10 +22,14 @@ export const slice = createSlice ({
         })
         .addCase(fetchUserCards.fulfilled, (state,action)=>{
             const data = action.payload;
-            state.users = data?.users ?? [];
+            const requestedPage = action.meta.arg?.page ?? 1;
+
             state.totalPages = data?.total_pages ?? 0;
-            state.page = data?.page ?? 1;
+            state.page = requestedPage;
             state.isLoading = false;
+
+            const incomingData = data?.users ?? [];
+            state.users = requestedPage > 1 ? [...state.users, ...incomingData] : incomingData;
         })
         .addCase(fetchUserCards.rejected, (state, action)=>{
             state.isLoading = false;
