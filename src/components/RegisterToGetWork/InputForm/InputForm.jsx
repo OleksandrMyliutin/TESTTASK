@@ -1,24 +1,25 @@
 import { Formik, Form, Field } from 'formik'
+import * as Yup from 'yup';
 import Button from '../../Button/Button'
 import s from './InputForm.module.css'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { resetInitialValue, setInitialValue } from '../../../redux/signup/formSlice'
-import { selectInitialValue, selectLoader, selectPositions} from '../../../redux/selectors'
+import { selectInitialValue, selectPositions, selectSubmitting} from '../../../redux/selectors'
 import { useEffect } from 'react'
 import { fetchPositions, submitFromStore } from '../../../redux/operations'
 import Loader from '../../Loader/Loader'
 import toast from 'react-hot-toast'
 const InputForm = () => {
     const initialValues = useSelector(selectInitialValue);
+    const isSubmitting  = useSelector(selectSubmitting);
     const dispatch = useDispatch();
     const positions = useSelector(selectPositions);
-    const isLoading = useSelector(selectLoader);
     useEffect(()=>{
         if (!positions.length) {
-        dispatch(fetchPositions(positions));
+        dispatch(fetchPositions());
     }
-    },[dispatch, positions]);
+    },[dispatch]);
 
     const handleSubmit = (values, actions) => {
 		dispatch(setInitialValue(values));
@@ -26,17 +27,22 @@ const InputForm = () => {
         .unwrap()
         .then(() => {
             actions.resetForm();
-            toast.success('User successfully registered', { id: 'signup-ok' });
             dispatch(resetInitialValue());
         })
         .catch((e) => {toast.error(String(e), { id: 'signup-err' })})
-		actions.resetForm();
 	};
 
+    const schema = Yup.object({
+        username:   Yup.string().required('Required'),
+        email:      Yup.string().email('Invalid email').required('Required'),
+        phone:      Yup.string().matches(/^\+380\d{9}$/, 'Format +380XXXXXXXXX').required('Required'),
+        position_id:Yup.string().required('Required'),
+        photo:      Yup.mixed().required('Required'),
+    });
 
     return (
-        <Formik initialValues={initialValues} onSubmit={handleSubmit}>
-            <Form className={s.form}>
+        <Formik initialValues={initialValues} validationSchema={schema}  validateOnMount onSubmit={handleSubmit}>
+            {({ isValid, dirty }) => <Form className={s.form}>
                 <div>
                     <label className={s.labelWrapper}>
                         <span className={s.labelText}>Username</span>
@@ -87,9 +93,9 @@ const InputForm = () => {
                         </label>
                     )}
                     </Field>
-                {isLoading && <Loader/>}
-                {!isLoading && <Button disabled>Sign up</Button>}
-            </Form>
+                {isSubmitting && <Loader/>}
+                {!isSubmitting && <Button type="submit" disabled={isSubmitting || !isValid || !dirty}>Sign up</Button>}
+            </Form>}
         </Formik>
     )
 }
