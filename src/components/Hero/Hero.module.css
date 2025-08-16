@@ -1,5 +1,7 @@
-.containerImage{
+.heroContainer{
     scroll-margin-top: 60px;
+}
+.containerImage{
     height: auto;
     object-fit: cover;
     display: block;

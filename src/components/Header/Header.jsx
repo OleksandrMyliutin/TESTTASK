@@ -9,7 +9,7 @@ const Header = () => {
             <div className={s.headerStyle}>
                 <Container>
                     <div className={s.headerContainer}>
-                        <div><img src={svg} alt="logo" /></div>
+                        <div><a href='#hero' ><img src={svg} alt="logo" /></a></div>
                         <div className={s.buttonsContainer}>
                             <Button link id={"#OurCheerfulUsers"}><p className={s.paragraph}>User</p></Button>
                             <Button link id={"#RegisterToGetWork"}><p className={s.paragraph}>Sign up</p></Button>

@@ -43,5 +43,7 @@
 }
 
 @media screen and (min-width: 2560px) {
-    
+    .listItem{
+        width: 370px;
+    }
 }

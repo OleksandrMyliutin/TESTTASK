@@ -12,6 +12,6 @@ import { Toaster } from 'react-hot-toast';
 createRoot(document.getElementById('root')).render(
   <Provider store={store}>
     <App />
-    <Toaster position="bottom-center"/>
+    <Toaster position="top-center"/>
   </Provider>,
 )

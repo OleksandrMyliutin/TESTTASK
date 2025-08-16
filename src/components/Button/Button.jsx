@@ -5,7 +5,7 @@ const Button = ({id, children, link=false, disabled=false, loadMoreInfo=false, t
     
     return (
         <>
-            {link && (<a href={id} className={`${s.btnStyle} ${disabled ? s.disabledStyle : ''} `} alt="Anchor link">{children}</a>)}
+            {link && (<a href={id} className={`${s.btnStyle} ${disabled ? s.disabledStyle : ''} `}>{children}</a>)}
             {!link && <button type={type} onClick={onClick}  className={`${s.btnStyle} ${disabled ? s.disabledStyle : ''} ${loadMoreInfo ? s.loadMore : ''}{...rest} ` } {...rest}>{children}</button>}
         </>
     )

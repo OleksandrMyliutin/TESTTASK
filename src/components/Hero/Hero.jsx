@@ -4,7 +4,7 @@ import Container from '../Container/Container'
 import s from './Hero.module.css'
 const Hero = () => {
     return (
-        <>
+        <div id='hero' className={s.heroContainer}>
             <Container backImg={true}>
                 <div className={s.containerImage}>
                         <div className={s.containerText}>
@@ -14,7 +14,7 @@ const Hero = () => {
                     <Button link id={"#RegisterToGetWork"}><p className={s.paragraphBtn}>Sign up</p></Button>
                 </div>
             </Container>
-        </>
+        </div>
     )
 }
 
