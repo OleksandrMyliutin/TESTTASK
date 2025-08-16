@@ -24,7 +24,11 @@ const InputForm = () => {
 
     const handleSubmit = (values, actions) => {
 		dispatch(setInitialValue(values));
-        dispatch(submitFromStore(FormData))
+        const formData = new FormData();
+        Object.entries(values).forEach(([key, value]) => {
+            formData.append(key, value);
+        });
+        dispatch(submitFromStore(formData))
         .unwrap()
         .then(() => {
             actions.resetForm();

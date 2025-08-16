@@ -26,7 +26,6 @@ const OurCheerfulUsers = () => {
         <div className={s.specialContainer}>
           <h2 className={s.titleSection}>Working with GET request</h2>
           <UserCardsList />
-          {console.log("isLoading:", isLoading)}
           {isLoading && <Loader/>}
           {!isLoading && currentPage < totalPages && <Button loadMoreInfo onClick={onShowMore}>Show More</Button>}
         </div>
