@@ -5,7 +5,7 @@
 }
 
 .addBackImg{
-    background-image: url('../../assets/images/hero/hero-image-mb.png');
+    background-image: url('../../assets/images/hero/hero-image-mb.webp');
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat;
@@ -19,7 +19,7 @@
         padding: 0 32px;
     }
     .addBackImg{
-        background-image: url(../../assets/images/hero/hero-image-table.png);
+        background-image: url(../../assets/images/hero/hero-image-table.webp);
     }
 }
 
@@ -29,7 +29,7 @@
         padding: 0 60px;
     }
     .addBackImg{
-        background-image: url(../../assets/images/hero/hero-image-desktop.png);
+        background-image: url(../../assets/images/hero/hero-image-desktop.webp);
         height: 650px;
     }
 }
